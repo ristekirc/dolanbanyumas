@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Dolan Banyumas</title>
         <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!-- Compiled and minified CSS -->
@@ -12,9 +11,13 @@
         
         <style type="text/css">
             
+            #carousel {
+                height: 550px !important;
+            }
+
             .carousel > .carousel-fixed-item:nth-child(2)
             {
-                margin-bottom: 115px;
+                margin-bottom: 175px;
             }
 
             .carousel > .carousel-fixed-item:nth-child(2) .btn-floating
@@ -23,14 +26,34 @@
                 margin-right: 1em;
             }
 
+            .sidenav li:first-child .sidehead {
+                z-index: 100;
+                margin-top: -29px;
+                min-height: 85px;
+                padding-top: 25px;
+                padding-bottom: 0px;
+            }
+
+            #scrollspy
+            {
+                margin-bottom: 0;
+            }
+
+            #scrollspy .m3
+            {
+                height: 300px;
+            }
+
         </style>
 
     </head>
 
     <body>
 
+        <!-- Navbar -->
+
         <nav>
-            <div class="nav-wrapper cyan darken-1">
+            <div class="nav-wrapper cyan darken-3">
                 
                 <a href="#" class="brand-logo center">Logo</a>
 
@@ -40,8 +63,10 @@
             </div>
         </nav>
 
-        <ul id="slide-out" class="sidenav">
-<!--             <li><div class="user-view">
+        <!-- Sidenav -->
+
+        <ul id="slide-out" class="sidenav blue-grey darken-4">
+            <!-- <li><div class="user-view">
                 
                 <div class="background">
                     <img src="images/office.jpg">
@@ -52,20 +77,23 @@
                 <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
 
             </div></li> -->
-            
-            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-            <li><a href="#!">Second Link</a></li>
-            <li><div class="divider"></div></li>
-            <li><a class="subheader">Subheader</a></li>
-            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+            <li>
+                <div class="sidehead cyan darken-3">
+                    <h5 class="center white-text" style="margin-bottom: 0;">Dolan Banyumas</h5>
+                </div>    
+            </li>
+
+            <li><a href="#!" class="waves-effect waves-teal white-text"><i class="material-icons white-text">home</i>Home</a></li>
+            <li><a href="#!" class="waves-effect waves-teal white-text"><i class="material-icons white-text">explore</i>Destinasi</a></li>
+            <li><a href="#!" class="waves-effect waves-teal white-text"><i class="material-icons white-text">card_travel</i>Hotel</a></li>
+            <li><a href="#!" class="waves-effect waves-teal white-text"><i class="material-icons white-text">restaurant</i>Kuliner</a></li>
+            <li><a href="#!" class="waves-effect waves-teal white-text"><i class="material-icons white-text">palette</i>Budaya</a></li>
 
         </ul>
         
-        <div class="carousel carousel-slider center">
+        <!-- Carousel -->
+
+        <div id="carousel" class="carousel carousel-slider center">
             
             <div class="carousel-fixed-item center">
                 <a class="btn waves-effect white grey-text darken-text-2">button</a>
@@ -98,13 +126,20 @@
 
         </div>
 
+        <div id="scrollspy" class="row blue-grey darken-4">
+            <div class="col m3"></div>
+            <div class="col m3"></div>
+            <div class="col m3"></div>
+            <div class="col m3"></div>
+        </div>
+
         <!-- Compiled and minified JavaScript -->
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
             
         <script>
-            
+
         $(document).ready(function(){
             
             $('.sidenav').sidenav({
@@ -124,22 +159,23 @@
 
             setInterval(function(){
                 $('.carousel.carousel-slider').carousel('next');
-            }, 5000);
+            }, 7000);
 
             $('.nextclick').click(function(e){
-              e.preventDefault();
-              e.stopPropagation();
-              $('.carousel').carousel('next');
-           });
+                e.preventDefault();
+                e.stopPropagation();
+                $('.carousel').carousel('next');
+            });
 
            
-           $('.prevclick').click(function(e){
-              e.preventDefault();
-              e.stopPropagation();
-              $('.carousel').carousel('prev');
-           });
+            $('.prevclick').click(function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                $('.carousel').carousel('prev');
+            });
 
         });
+
         </script>
 
     </body>
